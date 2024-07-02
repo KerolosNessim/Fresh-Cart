@@ -47,8 +47,9 @@ export default function Wishlist() {
                       </div>
                     </div>
                     <div>
-                      <button onClick={() => {
-                        addProductToCart(item.id)
+                      <button onClick={async() => {
+                        await addProductToCart(item.id)
+                        await delteProductFromWishList(item.id)
                       }} className=" btn me-2 ">
                         Add to cart <i className="fa-solid fa-plus"></i>
                       </button>

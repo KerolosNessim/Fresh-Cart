@@ -76,7 +76,8 @@ export default function Cart() {
                       <i className="fa-solid fa-plus"></i>
                     </button>
                     <span className="text-lg font-semibold">
-                      {product.count}
+                      {product.count <=0?1:product.count}
+
                     </span>
                     <button
                       onClick={() =>

@@ -7,7 +7,6 @@ export const wishListContext = createContext();
 export default function WishListProvide({ children }) {
   const { token } = useContext(userContext);
   const [wishListInfo, setWishListInfo] = useState(null);
-  // const [status, setStatus] = useState(false);
   async function getWishlist() {
     try {
       const options = {
@@ -42,7 +41,7 @@ export default function WishListProvide({ children }) {
       const { data } = await axios.request(options);
       console.log(data);
       toast.dismiss(wishId);
-      toast.success("Product Added Successfuly ");
+      toast.success("Product Added Successfuly To Wishlist ");
     } catch (error) {
       console.log(error);
     }
@@ -60,7 +59,7 @@ export default function WishListProvide({ children }) {
       toastId = toast.loading("Waitting....");
       let { data } = await axios.request(options);
       toast.dismiss(toastId);
-      toast.success("Product Removed Successfuly ");
+      toast.success("Product Removed Successfuly From Wishlist ");
       getWishlist();
       console.log(data);
     } catch (error) {
